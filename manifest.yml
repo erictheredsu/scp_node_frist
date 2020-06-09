@@ -1,0 +1,7 @@
+---
+applications:
+- name: myapp
+  routes:
+  - route: nodefirst.cfapps.sap.hana.ondemand.com
+  path: myapp
+  memory: 128M
