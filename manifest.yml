@@ -5,3 +5,21 @@ applications:
   - route: nodefirst.cfapps.sap.hana.ondemand.com
   path: myapp
   memory: 128M
+  services:
+    - myuaa
+- name: web
+  routes:
+  - route: nodefirsthello.cfapps.sap.hana.ondemand.com
+  path: web
+  memory: 128M
+  env:
+    destinations: >
+      [
+        {
+          "name":"myapp",
+          "url":"https://nodefirst.cfapps.sap.hana.ondemand.com",
+          "forwardAuthToken": true
+        }
+      ]
+  services:
+    - myuaa
